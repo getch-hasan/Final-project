@@ -1,0 +1,122 @@
+[
+    {
+        "name": "Oral surgery",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "Teeth care",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "Cavity protection",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "Heart surgery",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "parents & children",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "Eay Care",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "Cancer treatment",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "cold & fever",
+        "slots": []
+    },
+    {
+        "name": "mental service",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "crippled service",
+        "slots": [
+            "8.00 AM-8.30 AM"
+        ]
+    },
+    {
+        "name": "Skin",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    },
+    {
+        "name": "Sexual",
+        "slots": [
+            "8.00 AM-8.30 AM",
+            "8.30 AM-9.00 AM",
+            "9.00 AM-9.30 AM",
+            "9.30 AM-10.00 AM",
+            "10.00 AM-10.30 AM",
+            "10.30 AM-11.30 AM"
+        ]
+    }
+]
