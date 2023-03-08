@@ -2,19 +2,53 @@ import { format } from 'date-fns';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
+import { toast } from 'react-toastify';
 
-const BookingModal = ({ treatment, date, setTreatment }) => {
-    const { name, slots } = treatment;
+
+const BookingModal = ({ treatment, date, refetch, setTreatment }) => {
+    const { name, _id, slots } = treatment;
     const [user] = useAuthState(auth);
+
     const handleBooking = (event) => {
         event.preventDefault();
         const slot = event.target.slot.value
-        const date = event.target.date.value
-        const name = event.target.name.value
         const phone = event.target.phone.value
-        const email = event.target.email.value
+        const date = event.target.date.value
+        const booking = {
+            treatmentId: _id,
+            treatment: name,
+            date,
+            slot,
+            patient: user.email,
+            patientName: user.displayName,
+            phone: phone,
+        }
+        console.log()
+        fetch('http://localhost:8000/booking', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(booking)
 
-        setTreatment(null) //for close modal
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data, date)
+                if (data.success) {
+                    toast(`Appointment is set for ${date} at ${slot}`)
+                }
+                else {
+                    toast.error(`this appointment already exist for ${date} at ${slot}`)
+                }
+                refetch();//ekta booking dear por automatic abr  fetch kore available data dekhabe r reload kora lagbena
+                setTreatment(null) //for close modal
+
+            })
+
+
+
 
 
     }
@@ -31,12 +65,12 @@ const BookingModal = ({ treatment, date, setTreatment }) => {
                         <select name='slot' className='mt-2 align-center px-3 rounded-md w-full h-12'>
 
                             {
-                                slots.map((slot,index) => <option 
-                                   key={index}
-                                   value={slot}>{slot}</option>)
+                                slots.map((slot, index) => <option
+                                    key={index}
+                                    value={slot}>{slot}</option>)
                             }
                         </select>
-                        <input className='mt-2 align-center px-3 rounded-md w-full h-12' value={user?.displayName || ''} type="text" name='name' disabled /><br />
+                        <input className='mt-2 align-center px-3 rounded-md w-full h-12' value={user?.displayName || ''} type="text" name='name' />
                         <input className='mt-2 align-center px-3 rounded-md w-full h-12' disabled value={user?.email || ''} type="email" name="email" id="" />
                         <input className='mt-2 align-center px-3 rounded-md w-full h-12' placeholder='Phone' type="number" name="phone" id="" required /><br />
 

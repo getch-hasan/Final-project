@@ -3,23 +3,30 @@ import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth'
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../hooks/useToken';
 
 const SingUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const [updateProfile, updating, Uerror] = useUpdateProfile(auth);
-    const navigate = useNavigate()
-
-
     const [
         createUserWithEmailAndPassword,
         user,
         loading,
         error,
     ] = useCreateUserWithEmailAndPassword(auth);
+    const [token] = useToken(user || gUser);
+    const navigate = useNavigate()
+
+
     let singUpError;
-    if (gUser || user) {
-        console.log(gUser)
+    /* if (gUser || user) {
+        
+        // navigate('/appointment')//token hooks use korar age 
+    } */
+    if (token) {
+
+        navigate('/appointment')
     }
     if (loading || gLoading || updating) {
         return <div className='justify-center grid h-screen items-center'><button className="btn loading">loading</button></div>
@@ -33,7 +40,8 @@ const SingUp = () => {
         const success = await updateProfile({ displayName: data.name });
         if (success) {
             alert('Updated profile');
-            navigate('/appointment')
+            // navigate('/appointment')/sing up er por direct navigate korar jonno hooks use er age
+
         }
 
     }

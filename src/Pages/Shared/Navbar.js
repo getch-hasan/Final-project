@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Navbar = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user] = useAuthState(auth);
     const [signOut] = useSignOut(auth);
 
     const menuItems = <>
@@ -14,10 +14,12 @@ const Navbar = () => {
         <li><Link to='/review'>Review     </Link></li>
         <li><Link to='/contact'>Contact Us </Link></li>
         <li><Link to='/about'>About      </Link></li>
+        {user && <li><Link to='/dashboard'>Dashboard      </Link></li>}
         <li>{user ? <button onClick={async () => {
             const success = await signOut();
             if (success) {
                 alert('You are sign out');
+                localStorage.removeItem('accessToken')
             }
         }} className='btn btn-ghost'>SingOut</button> : <Link to='/login'>Login      </Link>}</li></>
 
@@ -41,6 +43,12 @@ const Navbar = () => {
 
                     {menuItems}
                 </ul>
+            </div>
+            <div className='nav-end'>
+                <label tabIndex="1" for="dashboard-sidebar" className="btn btn-ghost lg:hidden">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeilnecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                </label>
+
             </div>
 
         </div>

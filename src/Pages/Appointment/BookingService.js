@@ -1,7 +1,7 @@
 import React from 'react';
-import BookingModal from './BookingModal';
 
-const BookingService = ({ service, setTreatment, date }) => {
+
+const BookingService = ({ service, setTreatment }) => {
     const { name, slots } = service;
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
@@ -16,7 +16,7 @@ const BookingService = ({ service, setTreatment, date }) => {
                 <p className='text-center'>{slots.length} {slots.length > 1 ? 'spaces' : 'space'} Available</p>
                 <div className="card-actions justify-center">
 
-                    <label onClick={() => setTreatment(service, date)} htmlFor="Booking-modal" disabled={slots.length === 0} className="btn btn-primary bg-gradient-to-r from-secondary to-primary" >Book Appointment</label>
+                    <label onClick={() => setTreatment(service)} htmlFor="Booking-modal" disabled={slots.length === 0} className="btn btn-primary bg-gradient-to-r from-secondary to-primary" >Book Appointment</label>
                 </div>
             </div>
         </div>
