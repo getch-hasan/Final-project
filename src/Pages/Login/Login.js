@@ -19,7 +19,7 @@ const Login = () => {
     let singInError;
     const navigate = useNavigate()
     const location = useLocation()
-    const [token]=useToken(user || gUser)
+    const [token] = useToken(user || gUser)
     let from = location.state?.from?.pathname || '/home'
     useEffect(() => {
         if (token) {
@@ -33,7 +33,7 @@ const Login = () => {
     if (error || gError) {
         singInError = <small><p className='text-red-500'>{error?.message || gError?.message}</p></small>
     }
-  
+
 
 
     const onSubmit = data => {
