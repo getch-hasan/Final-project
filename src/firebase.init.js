@@ -5,6 +5,12 @@ import { getAuth } from "firebase/auth";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+/* REACT_APP_apiKey=AIzaSyDPQjZLKy1bXzIr88ovNq-aeDmgZ8n1aF0
+REACT_APP_authDomain=doctors-portal-72b8c.firebaseapp.com
+REACT_APP_projectId=doctors-portal-72b8c
+REACT_APP_storageBucket=doctors-portal-72b8c.appspot.com
+REACT_APP_messagingSenderId="211093725747"
+REACT_APP_appId=1:211093725747:web:e70bc7c5095b177345b946 */
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_apiKey,
   authDomain: process.env.REACT_APP_authDomain,

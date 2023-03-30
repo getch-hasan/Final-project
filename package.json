@@ -8,7 +8,7 @@
     "@testing-library/user-event": "^13.5.0",
     "daisyui": "^2.46.1",
     "date-fns": "^2.29.3",
-    "firebase": "^9.16.0",
+    "firebase": "^9.18.0",
     "react": "^18.2.0",
     "react-day-picker": "^8.4.1",
     "react-dom": "^18.2.0",

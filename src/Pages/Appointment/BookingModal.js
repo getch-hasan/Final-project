@@ -24,7 +24,7 @@ const BookingModal = ({ treatment, date, refetch, setTreatment }) => {
             phone: phone,
         }
         console.log()
-        fetch('http://localhost:8000/booking', {
+        fetch('https://doctor-portal-server-ag3l.onrender.com/booking', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

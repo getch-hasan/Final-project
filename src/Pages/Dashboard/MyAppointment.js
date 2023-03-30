@@ -1,7 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import {  useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 
@@ -13,7 +13,7 @@ const MyAppointment = () => {
     console.log(user.email)
 
     useEffect(() => {
-        if (user) fetch(`http://localhost:8000/booking?patient=${user.email}`,
+        if (user) fetch(`https://doctor-portal-server-ag3l.onrender.com/booking?patient=${user.email}`,
             {
                 method: 'GET', //this method for user verification
                 headers: {
@@ -27,7 +27,7 @@ const MyAppointment = () => {
                 console.log('res', res)
                 if (res.status === 401 || res.status === 403) {
                     signOut(auth);
-                     localStorage.removeItem('accessToken') //unauthorized kew hole take page thek logout kore dibo
+                    localStorage.removeItem('accessToken') //unauthorized kew hole take page thek logout kore dibo
                     navigate('/home')
 
                 }

@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 const User = ({ user, refetch }) => {
     const { email, role } = user;
     const makeAdmain = () => {
-        fetch(`http://localhost:8000/user/admin/${email}`,
+        fetch(`https://doctor-portal-server-ag3l.onrender.com/user/admin/${email}`,
             {
                 method: 'PUT',
                 headers: {
