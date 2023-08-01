@@ -6,7 +6,7 @@ import { toast } from 'react-toastify';
 
 
 const BookingModal = ({ treatment, date, refetch, setTreatment }) => {
-    const { name, _id, slots } = treatment;
+    const { name, _id, slots,price } = treatment;
     const [user] = useAuthState(auth);
 
     const handleBooking = (event) => {
@@ -22,6 +22,7 @@ const BookingModal = ({ treatment, date, refetch, setTreatment }) => {
             patient: user.email,
             patientName: user.displayName,
             phone: phone,
+            price:price
         }
         console.log()
         fetch('https://doctor-portal-server-ag3l.onrender.com/booking', {

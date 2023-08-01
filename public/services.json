@@ -1,6 +1,7 @@
 [
     {
         "name": "Oral surgery",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -12,6 +13,7 @@
     },
     {
         "name": "Teeth care",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -23,6 +25,7 @@
     },
     {
         "name": "Cavity protection",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -34,6 +37,7 @@
     },
     {
         "name": "Heart surgery",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -45,6 +49,7 @@
     },
     {
         "name": "parents & children",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -56,6 +61,7 @@
     },
     {
         "name": "Eay Care",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -67,6 +73,7 @@
     },
     {
         "name": "Cancer treatment",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -78,10 +85,12 @@
     },
     {
         "name": "cold & fever",
+        "price":"499",
         "slots": []
     },
     {
         "name": "mental service",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -93,12 +102,14 @@
     },
     {
         "name": "crippled service",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM"
         ]
     },
     {
         "name": "Skin",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",
@@ -110,6 +121,7 @@
     },
     {
         "name": "Sexual",
+        "price":"499",
         "slots": [
             "8.00 AM-8.30 AM",
             "8.30 AM-9.00 AM",

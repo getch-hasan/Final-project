@@ -19,6 +19,7 @@ import MyReview from './Pages/Dashboard/MyReview';
 import Users from './Pages/Dashboard/Users';
 import AddDoctor from './Pages/Dashboard/AddDoctor';
 import ManageDoctors from './Pages/Dashboard/ManageDoctors';
+import Payment from './Pages/Dashboard/Payment';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
           <Route path='allUsers' element={<Users></Users>}></Route>
           <Route path='addDoctor' element={<AddDoctor></AddDoctor>}></Route>
           <Route path='manageDoctor' element={<ManageDoctors></ManageDoctors>}></Route>
+          <Route path='payment/:id' element={<Payment></Payment>}></Route>
         </Route>
         <Route path='/review' element={<Review></Review>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
