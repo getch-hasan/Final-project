@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import DoctorRow from './DoctorRow';
+import DeleteConfirmMOdal from './DeleteConfirmMOdal';
 
 const ManageDoctors = () => {
-    const { data: doctors, isLoading ,refetch} = useQuery('doctors', () => fetch('http://localhost:8000/doctor', {
+    const [deletingDoctor, setDeletingDoctor] = useState(null)
+    const { data: doctors, isLoading, refetch } = useQuery('doctors', () => fetch('http://localhost:8000/doctor', {
         headers: {
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
         }
@@ -18,7 +20,7 @@ const ManageDoctors = () => {
             <div>
                 <div class="overflow-x-auto">
                     <table class="table">
-                       
+
                         <thead>
                             <tr>
                                 <th>Index</th>
@@ -29,23 +31,32 @@ const ManageDoctors = () => {
                             </tr>
                         </thead>
                         <tbody>
-                          { 
-                        doctors.map((doctor, index) => <DoctorRow
-                        key={doctor._id}
-                        doctor={doctor}
-                        index={index}
-                        refetch={refetch}
-                        ></DoctorRow>)
+                            {
+                                doctors.map((doctor, index) => <DoctorRow
+                                    key={doctor._id}
+                                    doctor={doctor}
+                                    index={index}
 
-                    }
-                           
-                            
-                            
+                                    setDeletingDoctor={setDeletingDoctor}
+                                ></DoctorRow>)
+
+                            }
+
+
+
                         </tbody>
                     </table>
+
                 </div>
 
             </div>
+            {
+                deletingDoctor && <DeleteConfirmMOdal
+                    deletingDoctor={deletingDoctor}
+                    refetch={refetch}
+                ></DeleteConfirmMOdal>
+            }
+
 
 
         </div>
