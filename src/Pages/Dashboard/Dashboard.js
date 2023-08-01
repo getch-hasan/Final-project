@@ -9,21 +9,25 @@ const Dashboard = () => {
     const [user] = useAuthState(auth)
     const [admin] = useAdmin(user)
     return (
-        <div class="drawer drawer-mobile">
-            <input id="dashboard-sidebar" type="checkbox" class="drawer-toggle" />
-            <div class="drawer-content">
+        <div className="drawer drawer-mobile">
+            <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
+            <div className="drawer-content">
                 <h2 className='text-2xl text-primary'> welcome to your Dashboard</h2>
                 <Outlet></Outlet>
 
 
             </div>
-            <div class="drawer-side">
-                <label htmlFor="dashboard-sidebar" class="drawer-overlay"></label>
-                <ul class="menu p-4 w-50 bg-base-100 text-base-content">
+            <div className="drawer-side">
+                <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
+                <ul className="menu p-4 w-50 bg-base-100 text-base-content">
                     {/*   <!-- Sidebar content here --> */}
                     <li><Link to='/dashboard'>My Appointment</Link></li>
                     <li><Link to='/dashboard/myreview'>My Review</Link></li>
-                    {admin && <li><Link to='/dashboard/allUsers'>All Users</Link></li>}
+                    {admin && <>
+                        <li><Link to='/dashboard/allUsers'>All Users</Link></li>
+                        <li><Link to='/dashboard/addDoctor'>Add a Doctor</Link></li>
+                        <li><Link to='/dashboard/manageDoctor'>Manage Doctor Doctor</Link></li>
+                    </>}
                 </ul>
 
             </div>

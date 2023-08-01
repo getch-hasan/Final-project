@@ -19,7 +19,7 @@ const useAdmin = (user) => {
 
                 // setToken(data)
                 {
-                    console.log(data)
+                   
 
                     setAdmin(data.admin);
                 }

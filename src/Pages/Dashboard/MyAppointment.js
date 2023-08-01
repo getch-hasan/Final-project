@@ -10,7 +10,7 @@ const MyAppointment = () => {
     const [appointments, setAppointment] = useState([])
     const [user] = useAuthState(auth)
     const navigate = useNavigate()
-    console.log(user.email)
+
 
     useEffect(() => {
         if (user) fetch(`https://doctor-portal-server-ag3l.onrender.com/booking?patient=${user.email}`,
@@ -24,7 +24,7 @@ const MyAppointment = () => {
 
         )
             .then(res => {
-                console.log('res', res)
+
                 if (res.status === 401 || res.status === 403) {
                     signOut(auth);
                     localStorage.removeItem('accessToken') //unauthorized kew hole take page thek logout kore dibo
@@ -46,15 +46,20 @@ const MyAppointment = () => {
             <h1 className='mx-5 my-4'>My Appointment {appointments.length}</h1>
 
             <table className='table table-zebra w-full'>
-                <thead> <tr>
+                <thead><tr>
+                    <th>index</th>
                     <th>Name</th>
                     <th>DATE</th>
                     <th>TIME</th>
                     <th>TREATMENT</th>
-                </tr></thead>
+                </tr>
+                </thead>
                 <tbody>
                     {
-                        appointments.map((appointment, index) => <tr >
+                        appointments.map((appointment, index) => <tr
+                            key={index}
+
+                        >
                             <td>{index + 1}</td>
                             <td>{appointment.patientName}</td>
                             <td>{appointment.date}</td>
