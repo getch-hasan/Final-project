@@ -19,7 +19,7 @@ const Payment = () => {
 
 
     )
-    console.log(appointment)
+    
     if (isLoading) {
         return <h1>Loading</h1>
     }
@@ -36,10 +36,12 @@ const Payment = () => {
 
                 </div>
             </div>
-            <div className='card w-96 bg-base-100 shadow-xl'>
+            <div className='card w-96 bg-white shadow-xl'>
                 <div className='card card-body'>
                     <Elements stripe={stripePromise} >
-                        <CheckoutForm />
+                        <CheckoutForm
+                        appointment={appointment}
+                        />
                     </Elements>
                 </div>
 

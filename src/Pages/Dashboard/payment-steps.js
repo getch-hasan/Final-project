@@ -5,4 +5,7 @@
 //create checkout element use card element and use stripe use element 
 //get card elements info
 //-------------
-//get credit card info error 
+//get credit card info error _+ display error jodi  thake
+//get client secrete from backend via payment intent post api
+//store client secrete on the client site or backend
+
