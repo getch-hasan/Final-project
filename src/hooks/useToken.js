@@ -6,7 +6,7 @@ const useToken = (user) => {
         const email = user?.user?.email;
         const currentUser = { email: email }
         if (email) {
-            fetch(`https://doctor-portal-server-ag3l.onrender.com/user/${email}`,
+            fetch(`https://doctors-portal-6w1i.onrender.com/user/${email}`,
                 {
                     method: 'PUT',
                     headers: {

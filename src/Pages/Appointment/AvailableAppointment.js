@@ -12,13 +12,13 @@ const AvailableAppointment = ({ date }) => {
     console.log(formatedDate)
     /* useEffect(() => {
         //easy te data reload or refetch kora jonno eta useSatate and use effect comment kore disi
-        fetch(`https://doctor-portal-server-ag3l.onrender.com/available?date=${formatedDate}`)
+        fetch(`https://doctors-portal-6w1i.onrender.com/available?date=${formatedDate}`)
             .then(res => res.json())
             .then(data => setServices(data));
 
     }, [formatedDate]) */
     const { isLoading, error, data: services, refetch } = useQuery(['available', formatedDate], () =>
-        fetch(`https://doctor-portal-server-ag3l.onrender.com/available?date=${formatedDate}`)
+        fetch(`https://doctors-portal-6w1i.onrender.com/available?date=${formatedDate}`)
             .then(res => res.json())
     )//ei useQuery use kore refetch call korle data automatic reload hoi tai react query the eta use korsi
     if (isLoading) return 'Loading...'

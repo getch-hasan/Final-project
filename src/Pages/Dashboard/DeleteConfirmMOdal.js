@@ -2,12 +2,12 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const DeleteConfirmMOdal = ({ deletingDoctor,refetch }) => {
+const DeleteConfirmMOdal = ({ deletingDoctor, refetch }) => {
 
-    const { name,email } = deletingDoctor
+    const { name, email } = deletingDoctor
     console.log(deletingDoctor)
-    const deleteDoctor=(email)=>{
-        fetch(`http://localhost:8000/doctor/${email}`,
+    const deleteDoctor = (email) => {
+        fetch(`https://doctors-portal-6w1i.onrender.com/doctor/${email}`,
             {
                 method: 'DELETE',
                 headers: {
@@ -25,7 +25,7 @@ const DeleteConfirmMOdal = ({ deletingDoctor,refetch }) => {
                 if (data.deletedCount === 1) {
                     toast.success('Doctor Deleted')
                     refetch();
-                    
+
                 }
             })
     }
@@ -39,9 +39,9 @@ const DeleteConfirmMOdal = ({ deletingDoctor,refetch }) => {
                 <p class="py-4">Press ESC key or click the button below to close</p>
                 <div class="modal-action"  >
 
-                    <label  className ="btn btn-xs" htmlFor="delete-confirm-modal">cancel</label>
-                    <button className ="btn btn-xs btn-error"  onClick={()=>deleteDoctor(email)}>Remove</button>
-                    
+                    <label className="btn btn-xs" htmlFor="delete-confirm-modal">cancel</label>
+                    <button className="btn btn-xs btn-error" onClick={() => deleteDoctor(email)}>Remove</button>
+
                 </div>
             </form>
 

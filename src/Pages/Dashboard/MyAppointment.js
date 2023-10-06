@@ -13,7 +13,7 @@ const MyAppointment = () => {
 
 
     useEffect(() => {
-        if (user) fetch(`https://doctor-portal-server-ag3l.onrender.com/booking?patient=${user.email}`,
+        if (user) fetch(`https://doctors-portal-6w1i.onrender.com/booking?patient=${user.email}`,
             {
                 method: 'GET', //this method for user verification
                 headers: {
@@ -66,8 +66,8 @@ const MyAppointment = () => {
                             <td>{appointment.date}</td>
                             <td>{appointment.slot}</td>
                             <td>{appointment.treatment}</td>
-                            <td>{(appointment.price && !appointment.paid )&& <Link to={`/dashboard/payment/${appointment._id}`}><button className='btn btn-xs btn-secondary'> Pay</button></Link>}</td>
-                            <td>{(appointment.price && appointment.paid )&& <span className='text-success'> Paid</span>}</td>
+                            <td>{(appointment.price && !appointment.paid) && <Link to={`/dashboard/payment/${appointment._id}`}><button className='btn btn-xs btn-secondary'> Pay</button></Link>}</td>
+                            <td>{(appointment.price && appointment.paid) && <span className='text-success'> Paid</span>}</td>
 
                         </tr>
 

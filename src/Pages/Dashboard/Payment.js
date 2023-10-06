@@ -9,7 +9,7 @@ const Payment = () => {
     const stripePromise = loadStripe('pk_test_51NaP9YIRxjIz7EfmkiYkxM8ok02r3sC53xfpBGZEriEFlW7QGdqG7Awy0G3OrXmpcYP57isPxKp7HwoZlnIHAxps00XUQ814a4');
 
     const { id } = useParams()
-    const url = `http://localhost:8000/payment/${id}`
+    const url = `https://doctors-portal-6w1i.onrender.com/payment/${id}`
     const { data: appointment, isLoading } = useQuery(['booking', id], () => fetch(url, {
         method: 'GET',
         headers: {
@@ -19,7 +19,7 @@ const Payment = () => {
 
 
     )
-    
+
     if (isLoading) {
         return <h1>Loading</h1>
     }
@@ -40,7 +40,7 @@ const Payment = () => {
                 <div className='card card-body'>
                     <Elements stripe={stripePromise} >
                         <CheckoutForm
-                        appointment={appointment}
+                            appointment={appointment}
                         />
                     </Elements>
                 </div>

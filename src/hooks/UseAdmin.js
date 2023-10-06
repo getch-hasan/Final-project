@@ -5,7 +5,7 @@ const useAdmin = (user) => {
     useEffect(() => {
         const email = user.email
         if (email) {
-            fetch(`https://doctor-portal-server-ag3l.onrender.com/admin/${email}`,
+            fetch(`https://doctors-portal-6w1i.onrender.com/admin/${email}`,
                 {
                     method: 'GET',
                     headers: {
@@ -19,7 +19,7 @@ const useAdmin = (user) => {
 
                 // setToken(data)
                 {
-                   
+
 
                     setAdmin(data.admin);
                 }

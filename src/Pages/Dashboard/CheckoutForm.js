@@ -3,7 +3,7 @@ import { type } from '@testing-library/user-event/dist/type';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({ appointment }) => {
-    const {_id}=appointment
+    const { _id } = appointment
     const stripe = useStripe()
     const elements = useElements()
     const [cardEror, setCardEror] = useState('')
@@ -14,7 +14,7 @@ const CheckoutForm = ({ appointment }) => {
     const { price, patientName, patient } = appointment
     useEffect(() => {
 
-        fetch("http://localhost:8000/create-payment-intent", {
+        fetch("https://doctors-portal-6w1i.onrender.com/create-payment-intent", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -78,17 +78,17 @@ const CheckoutForm = ({ appointment }) => {
             setTransectionId(paymentIntent.id)
             console.log(paymentIntent, success)
             //
-            const payment={
-                appointment:_id,
-                transectionId:paymentIntent.id
+            const payment = {
+                appointment: _id,
+                transectionId: paymentIntent.id
             }
-            fetch(`http://localhost:8000/booking/${_id}`,{
+            fetch(`https://doctors-portal-6w1i.onrender.com/booking/${_id}`, {
                 method: 'PATCH',
                 headers: {
                     "Content-Type": "application/json",
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 },
-                body:JSON.stringify(payment)
+                body: JSON.stringify(payment)
             }).then(res => res.json()).then(data => {
                 setProcessing(false)
             })

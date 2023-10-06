@@ -4,8 +4,8 @@ import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
 
 const AddDoctor = () => {
-    const { register, formState: { errors }, handleSubmit,reset } = useForm();
-    const { data: services, isLoading } = useQuery('services', () => fetch('http://localhost:8000/service')
+    const { register, formState: { errors }, handleSubmit, reset } = useForm();
+    const { data: services, isLoading } = useQuery('services', () => fetch('https://doctors-portal-6w1i.onrender.com/service')
         .then(res => res.json()))
 
     /*
@@ -39,7 +39,7 @@ const AddDoctor = () => {
                     }
 
                     //for send to database
-                    fetch('http://localhost:8000/doctor',
+                    fetch('https://doctors-portal-6w1i.onrender.com/doctor',
                         {
                             method: 'POST',
                             headers: {
@@ -53,18 +53,18 @@ const AddDoctor = () => {
 
                         .then(res => res.json())
                         .then(inserted => {
-                                if(inserted.insertedId){
-                                    toast.success('Doctor added successfully')
-                                    reset()
-                                }
-                                else{
-                                    toast.error("Failed to add doctor")
-                                }
-                            })
+                            if (inserted.insertedId) {
+                                toast.success('Doctor added successfully')
+                                reset()
+                            }
+                            else {
+                                toast.error("Failed to add doctor")
+                            }
+                        })
 
-                    
+
                 }
-                
+
 
             })
 

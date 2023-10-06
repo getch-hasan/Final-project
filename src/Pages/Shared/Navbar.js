@@ -12,7 +12,8 @@ const Navbar = () => {
         <li><Link to='/home'>Home        </Link></li>
         <li><Link to='/appointment'>Appointment</Link></li>
         <li><Link to='/review'>Review     </Link></li>
-        <li><Link to='/contact'>Contact Us </Link></li>
+        <li><Link to='/contact'>Blood Donation </Link></li>
+        <li><Link to='/ambulance'>Ambulance </Link></li>
         <li><Link to='/about'>About      </Link></li>
         {user && <li><Link to='/dashboard'>Dashboard      </Link></li>}
         <li>{user ? <button onClick={async () => {

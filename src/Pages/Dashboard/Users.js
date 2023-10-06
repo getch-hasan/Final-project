@@ -4,7 +4,7 @@ import User from './User';
 
 const Users = () => {
     const { data: users, isLoading, error, refetch } = useQuery(['users'], () =>
-        fetch(`https://doctor-portal-server-ag3l.onrender.com/user`,
+        fetch(`https://doctors-portal-6w1i.onrender.com/user`,
             {
                 method: 'GET',
                 headers: {

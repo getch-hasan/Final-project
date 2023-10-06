@@ -120,6 +120,7 @@ const SingUp = () => {
                             <p className='text-center mt-2'>Already have an account? <Link to='/login'><span className='font-light text-primary'>Please login</span></Link></p>
                         </form>
                     </div>
+                   
                     <div className="divider">OR</div>
 
                     <button onClick={() => signInWithGoogle()} className='btn mx-7  my-4'>TO CONTINUE WITH GOOGLE</button>
